@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: techcommerce
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/techcommerce-db
+    username: postgres
+    password: admin
