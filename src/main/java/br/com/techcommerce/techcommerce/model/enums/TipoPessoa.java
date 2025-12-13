@@ -1,16 +1,19 @@
 package br.com.techcommerce.techcommerce.model.enums;
 
-public enum TipoVenda {
-    PRODUTO ("Produto"),
-    SERVICO ("Serviço");
+public enum TipoPessoa {
+    FISICA ("Física"),
+    JURIDICA ("Jurídica");
+
 
     private final String descricao;
 
-    TipoVenda(String descricao) {
+    TipoPessoa(String descricao) {
         this.descricao = descricao;
     }
 
     public String getDescricao() {
         return descricao;
     }
+
+
 }
