@@ -24,6 +24,12 @@ public class ProdutoController {
         return ResponseEntity.ok(produtosEncontrados);
     }
 
+    @GetMapping("/{uuid}")
+    public ResponseEntity<Produto> buscarPorId(@PathVariable UUID uuid){
+        Optional<Produto> produto = produtoRepository.findById(uuid);
+        return produto.isPresent() ? ResponseEntity.ok(produto.get()) : ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/salvar")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto){
         Optional<Produto> produtoSalvo = Optional.of(produtoRepository.save(produto));
