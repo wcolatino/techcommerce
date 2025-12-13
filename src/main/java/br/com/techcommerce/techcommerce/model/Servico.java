@@ -17,10 +17,10 @@ public class Servico {
 
     private String descricao;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDateTime agendamento;
-
     private BigDecimal valor;
+
+    @OneToOne
+    private Agendamento agendamento;
 
     public UUID getId() {
         return id;
@@ -38,19 +38,19 @@ public class Servico {
         this.descricao = descricao;
     }
 
-    public LocalDateTime getAgendamento() {
-        return agendamento;
-    }
-
-    public void setAgendamento(LocalDateTime agendamento) {
-        this.agendamento = agendamento;
-    }
-
     public BigDecimal getValor() {
         return valor;
     }
 
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+    public Agendamento getAgendamento() {
+        return agendamento;
+    }
+
+    public void setAgendamento(Agendamento agendamento) {
+        this.agendamento = agendamento;
     }
 }
