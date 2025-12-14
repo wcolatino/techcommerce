@@ -1,6 +1,7 @@
 package br.com.techcommerce.techcommerce.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -19,6 +20,7 @@ public class Servico {
 
     private BigDecimal valor;
 
+    @JsonIgnore
     @OneToOne
     private Agendamento agendamento;
 

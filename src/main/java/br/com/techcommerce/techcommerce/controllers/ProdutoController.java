@@ -32,8 +32,7 @@ public class ProdutoController {
 
     @PostMapping("/salvar")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto){
-        Optional<Produto> produtoSalvo = Optional.of(produtoRepository.save(produto));
-        return !produtoSalvo.isEmpty() ? ResponseEntity.ok(produtoSalvo.get()) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(produtoRepository.save(produto));
     }
 
     @PutMapping("/atualizar/{uuid}")
